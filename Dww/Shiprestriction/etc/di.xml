@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Dww\Shiprestriction\Model\Rule">
+        <arguments>
+            <argument name="conditionCombine" xsi:type="object" shared="false">Dww\Shiprestriction\Model\Rule\Condition\Combine</argument>
+        </arguments>
+    </type>
+    <type name="Dww\Shiprestriction\Setup\UpgradeData">
+        <arguments>
+            <argument name="changeMethodsFormat" xsi:type="object">Dww\Shiprestriction\Setup\Operation\ChangeMethodsFormat\Proxy</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Shipping\Model\Shipping">
+        <plugin name="Dww_Shiprestriction::RestrictRates" type="Dww\Shiprestriction\Plugin\Model\ShippingPlugin"/>
+    </type>
+    <type name="Magento\Quote\Model\Quote\Config">
+        <plugin name="Dww_Shiprestriction::ProductAttributes" type="Dww\Shiprestriction\Plugin\ProductAttributes" />
+    </type>
+    <type name="\Magento\SalesRule\Setup\UpgradeData">
+        <plugin name="Dww_Shiprestriction::SetupUpgradeData" type="Dww\Shiprestriction\Plugin\Setup\UpgradeData" />
+    </type>
+    <type name="Dww\Shiprestriction\Setup\UpgradeData">
+        <arguments>
+            <argument name="changeMethodsFormat" xsi:type="object">Dww\Shiprestriction\Setup\Operation\ChangeMethodsFormat\Proxy</argument>
+        </arguments>
+    </type>
+    <preference for="Magento\Quote\Model\ShippingMethodManagement"     type="Dww\Shiprestriction\Model\Quote\ShippingMethodManagement"/>
+</config>

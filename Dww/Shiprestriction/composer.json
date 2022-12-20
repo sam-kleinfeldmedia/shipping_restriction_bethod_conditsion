@@ -1,0 +1,27 @@
+{
+    "name": "dww/shiprestriction",
+    "description": "Shipping Restrictions By Dww",
+    "require": {
+        "php": "^7.1.0",
+        "dww/base": ">=1.12.11",
+        "dww/system-common-rules": ">=2.4.11",
+        "dww/module-shippingarea": ">=1.0.4"
+    },
+    "suggest": {
+        "dww/module-shiprestriction-mftf-2": "Install module-shiprestriction-mftf-2 module to be able to run Shipping Restriction MFTF tests for Magento 2.3.6 and higher.",
+        "dww/module-shiprestriction-mftf-3": "Install module-shiprestriction-mftf-3 module to be able to run Shipping Restriction MFTF tests for Magento 2.4.1 and higher."
+    },
+    "type": "magento2-module",
+    "version": "2.5.7",
+    "license": [
+        "Commercial"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Dww\\Shiprestriction\\": ""
+        }
+    }
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="Dww" translate="label" sortOrder="200">
+			<label>Dww</label>
+		</tab>
+		<section id="shiprestriction" translate="label" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>Shippingrestriction</label>
+			<tab>Dww</tab>
+			<resource>Dww_Shiprestriction::configuration</resource>
+			<!-- <group id="shiprestriction" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+				<label>General Configuration</label>
+				<field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+					<label>Dww Shippingrestriction</label>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+			</group> -->
+			
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="tax" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Include tax in subtotal</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="discount" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use subtotal after discount</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="error_message" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Always show error message</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+		</section>
+	</system>
+</config>

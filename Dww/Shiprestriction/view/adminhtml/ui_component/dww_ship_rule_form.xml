@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">dww_ship_rule_form.dww_ship_rule_form_data_source</item>
+            <item name="deps" xsi:type="string">dww_ship_rule_form.dww_ship_rule_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Shipping Rule</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">dww_ship_rule_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="array">
+                <item name="name" xsi:type="string">back</item>
+                <item name="label" xsi:type="string" translate="true">Back</item>
+                <item name="class" xsi:type="string">back</item>
+                <item name="url" xsi:type="string">*/*/</item>
+            </item>
+            <item name="delete" xsi:type="string">Dww\Shiprestriction\Block\Adminhtml\Rule\Edit\DeleteButton</item>
+            <item name="save" xsi:type="array">
+                <item name="name" xsi:type="string">save</item>
+                <item name="label" xsi:type="string" translate="true">Save</item>
+                <item name="class" xsi:type="string">save primary</item>
+                <item name="url" xsi:type="string">*/*/save</item>
+            </item>
+            <item name="save_and_continue" xsi:type="array">
+                <item name="name" xsi:type="string">save_and_continue</item>
+                <item name="label" xsi:type="string" translate="true">Save and Continue Edit</item>
+                <item name="class" xsi:type="string">save</item>
+                <item name="url" xsi:type="string">*/*/save</item>
+            </item>
+        </item>
+    </argument>
+    <dataSource name="dww_ship_rule_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Dww\Shiprestriction\Ui\DataProvider</argument>
+            <argument name="name" xsi:type="string">dww_ship_rule_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">rule_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="dww_shiprestriction/rule/save"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <container name="info">
+        <argument name="data" xsi:type="array">
+            <item name="sortOrder" xsi:type="number">0</item>
+        </argument>
+        <htmlContent name="html_content">
+            <argument name="block" xsi:type="object">Dww\Shiprestriction\Block\Adminhtml\System\Config\Information</argument>
+        </htmlContent>
+    </container>
+    <fieldset name="general">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Shipping Methods</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">10</item>
+                <item name="opened" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+        <field name="rule_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">ship_rule</item>
+                    <item name="dataScope" xsi:type="string">rule_id</item>
+                </item>
+            </argument>
+        </field>
+        <field name="name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Restriction name</item>
+                    <item name="additionalInfo" xsi:type="string"></item>
+                    <item name="tooltipTpl" xsi:type="string">Dww_Shiprestriction/ui/element/helper/tooltip</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">ship_rule</item>
+                    <item name="dataScope" xsi:type="string">name</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_active">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Restriction status</item>
+                    <item name="additionalInfo" xsi:type="string"></item>
+                    <item name="tooltipTpl" xsi:type="string">Dww_Shiprestriction/ui/element/helper/tooltip</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="source" xsi:type="string">ship_rule</item>
+                    <item name="dataScope" xsi:type="string">is_active</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="number">1</item>
+                        <item name="false" xsi:type="number">0</item>
+                    </item>
+                    <item name="toggleLabels" xsi:type="array">
+                        <item name="on" xsi:type="string" translate="true">Active</item>
+                        <item name="off" xsi:type="string" translate="true">Inactive</item>
+                    </item>
+                    <item name="default" xsi:type="number">1</item>
+                </item>
+            </argument>
+        </field>
+        <field name="methods">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Restrict Shipping Carriers and Methods</item>
+                    <item name="source" xsi:type="string">ship_rule</item>
+                    <item name="dataScope" xsi:type="string">methods</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="componentType" xsi:type="string">field</item>
+                    <item name="component" xsi:type="string">Dww_Shiprestriction/js/form/element/tree</item>
+                    <item name="filterOptions" xsi:type="boolean">true</item>
+                    <item name="chipsEnabled" xsi:type="boolean">true</item>
+                    <item name="multiple" xsi:type="boolean">true</item>
+                    <item name="disableLabel" xsi:type="boolean">true</item>
+                    <item name="lastSelectable" xsi:type="boolean">false</item>
+                    <item name="levelsVisibility" xsi:type="string">0</item>
+                    <item name="elementTmpl" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                    <item name="additionalInfo" xsi:type="string"></item>
+                </item>
+                <item name="options" xsi:type="object">Dww\Shiprestriction\Model\OptionProvider\Provider\CarriersMethodsOptions</item>
+            </argument>
+        </field>
+        <field name="message">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Restriction message</item>
+                    <item name="additionalInfo" xsi:type="string"></item>
+                    <item name="tooltipTpl" xsi:type="string">Dww_Shiprestriction/ui/element/helper/tooltip</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">ship_rule</item>
+                    <item name="dataScope" xsi:type="string">message</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+
+    <fieldset name="store_groups">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Stores &amp; Customer Groups</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">40</item>
+            </item>
+        </argument>
+    
+        <field name="stores">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Apply In Stores</item>
+                    <item name="additionalInfo" xsi:type="string"></item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="formElement" xsi:type="string">multiselect</item>
+                    <item name="source" xsi:type="string">ship_rule</item>
+                    <item name="dataScope" xsi:type="string">stores</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+                <item name="options" xsi:type="object">Magento\Cms\Ui\Component\Listing\Column\Cms\Options</item>
+            </argument>
+        </field>
+        <field name="cust_groups">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Apply For Customer Groups</item>
+                    <item name="additionalInfo" xsi:type="string"></item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="formElement" xsi:type="string">multiselect</item>
+                    <item name="source" xsi:type="string">ship_rule</item>
+                    <item name="dataScope" xsi:type="string">cust_groups</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
+                <item name="options" xsi:type="object">Dww\Shiprestriction\Model\OptionProvider\Provider\CustomerGroupOptionProvider</item>
+            </argument>
+        </field>
+    </fieldset>
+
+</form>

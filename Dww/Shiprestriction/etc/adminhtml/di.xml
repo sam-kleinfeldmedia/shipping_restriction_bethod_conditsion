@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Dww\Shiprestriction\Controller\Adminhtml\Rule\Delete">
+        <arguments>
+            <argument name="ruleModel" xsi:type="object" shared="false">Dww\Shiprestriction\Model\Rule</argument>
+            <argument name="resource" xsi:type="object">Dww\Shiprestriction\Model\ResourceModel\Rule</argument>
+        </arguments>
+    </type>
+
+    <type name="Dww\Shiprestriction\Controller\Adminhtml\Rule\Duplicate">
+        <arguments>
+            <argument name="ruleModel" xsi:type="object" shared="false">Dww\Shiprestriction\Model\Rule</argument>
+            <argument name="resource" xsi:type="object">Dww\Shiprestriction\Model\ResourceModel\Rule</argument>
+        </arguments>
+    </type>
+
+    <type name="Dww\Shiprestriction\Controller\Adminhtml\Rule\Edit">
+        <arguments>
+            <argument name="ruleModel" xsi:type="object" shared="false">Dww\Shiprestriction\Model\Rule</argument>
+            <argument name="resource" xsi:type="object">Dww\Shiprestriction\Model\ResourceModel\Rule</argument>
+        </arguments>
+    </type>
+
+    <type name="Dww\Shiprestriction\Controller\Adminhtml\Rule\MassAction">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Dww\Shiprestriction\Model\ResourceModel\Rule\Collection</argument>
+            <argument name="resource" xsi:type="object">Dww\Shiprestriction\Model\ResourceModel\Rule</argument>
+        </arguments>
+    </type>
+
+    <type name="Dww\Shiprestriction\Controller\Adminhtml\Rule\Save">
+        <arguments>
+            <argument name="ruleModel" xsi:type="object" shared="false">Dww\Shiprestriction\Model\Rule</argument>
+            <argument name="resource" xsi:type="object">Dww\Shiprestriction\Model\ResourceModel\Rule</argument>
+        </arguments>
+    </type>
+</config>

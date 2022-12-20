@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Dww_Shiprestriction::rule"  title="Shipping Restrictions" module="Dww_Shiprestriction" sortOrder="100" parent="Magento_Sales::sales_operation" action="dww_shiprestriction/rule/" resource="Dww_Shiprestriction::rule"/>
+    </menu>
+</config>
